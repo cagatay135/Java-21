@@ -1,3 +1,5 @@
+package src;
+
 class Record {
     public record User(String name, int age) {
     }

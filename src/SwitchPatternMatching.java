@@ -1,16 +1,18 @@
+package src;
+
 import java.math.BigDecimal;
-import java.util.logging.Logger;
+import java.time.DayOfWeek;
 
 
-class SwitchPattern {
+class SwitchPatternMatching {
 
     public static void main(String[] args) {
         String value = asStringValue(64L);
         System.out.println(value);
 
-        boolean isWeekend = isTheWeekend("SATURDAY");
+        boolean isWeekend = isTheWeekend(DayOfWeek.SATURDAY);
         System.out.println(isWeekend);
-    }
+        }
 
     static String asStringValue(Object anyValue) {
         return switch (anyValue) {
@@ -23,11 +25,11 @@ class SwitchPattern {
         };
     }
 
-    static boolean isTheWeekend(String dayOfWeek) {
+    static boolean isTheWeekend(DayOfWeek dayOfWeek) {
         return switch (dayOfWeek) {
-            case "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"  -> false;
-            case "SATURDAY", "SUNDAY"                                    -> true;
-            case null,default                                            -> throw new IllegalArgumentException("Invalid day: " + dayOfWeek);
+            case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY  -> false;
+            case SATURDAY, SUNDAY                              -> true;
+            case null,default                                  -> throw new IllegalArgumentException("Invalid day: " + dayOfWeek);
         };
     }
 }

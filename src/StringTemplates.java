@@ -1,3 +1,5 @@
+package src;
+
 import java.time.LocalTime;
 import static java.lang.StringTemplate.STR;
 
